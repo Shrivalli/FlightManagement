@@ -1,0 +1,21 @@
+﻿@model IEnumerable<MvcClient.Models.Flights>
+
+@{
+    ViewData["Title"] = "ShowFlights";
+}
+
+<h1>All Flights</h1>
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        @foreach(var item in Model)
+        {
+        <div class="col-md-3 col-sm-3  jumbotron mr-1 mb-1">
+            <h4>@item.FromLocation - @item.ToLocation</h4>
+            <h5>Duration : @item.Duration</h5>
+            <h6>Rs @item.Price</h6>
+            <a class="btn btn-success" asp-action="BookTicket" asp-route-id=@item.FlightId>BookTicket</a>
+        </div>
+        }
+    </div>
+</div>
+

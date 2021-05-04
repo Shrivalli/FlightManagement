@@ -1,0 +1,33 @@
+﻿@model MvcClient.Models.FetchByLocation
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<h4>Search Flights</h4>
+<a asp-action="GetTickets" asp-controller="Booking" asp-route-id=@TempData["UserId"]>Show My Bookings</a>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Index">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FromLocation" class="control-label"></label>
+                <input asp-for="FromLocation" class="form-control" />
+                <span asp-validation-for="FromLocation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ToLocation" class="control-label"></label>
+                <input asp-for="ToLocation" class="form-control" />
+                <span asp-validation-for="ToLocation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+

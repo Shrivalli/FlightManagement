@@ -1,0 +1,89 @@
+﻿@model IEnumerable<MvcClient.Models.Flights>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FlightId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AirlineId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FromLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ToLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Duration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AvailableSeats)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArrivalTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepartureTime)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlightId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AirlineId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FromLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ToLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Duration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AvailableSeats)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArrivalTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartureTime)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.FlightId }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.FlightId }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.FlightId })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
